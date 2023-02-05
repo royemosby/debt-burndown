@@ -1,55 +1,21 @@
-# React-tauri-vite-template
+# Debt burndown calculator built in React inside Tauri
 
-Simple template to get started with react vite and tauri, note that it has typescript support also, ~~It enables the vite-plugin-tauri, to avoid ghost terminal issue~~.
+## Tech used
 
-## why ?
+- Tauri
+- Tauri Plugin-Store
+- Vite with HMR (buzzy enough?)
+- React + Typescript
+- React Router
+- Chart.js
+- Finance.js
 
-Because it's fun.
+## Installation
 
-## Requirements:
+- Meet all [Tauri requirements](https://tauri.app/v1/guides/getting-started/prerequisites)
+- Install PNPM
+- run `npm install` in root directory
 
-[here](https://tauri.app/v1/guides/getting-started/prerequisites)
+## Development
 
-## Instructions
-
-1- install dependencies
-
-```sh
-#npm
-npm install
-
-#yarn
-yarn
-```
-
-2- Run the App in development mode:
-
-```sh
-#npm
-npm run tauri:dev
-
-#yarn
-yarn tauri:dev
-```
-
-note that the first run will take time as tauri download and compile dependencies.
-
-## Production
-
-when you are happy with the results and ready to ship your useless app.
-
-run:
-
-```sh
-#npm
-npm run tauri:build
-
-#yarn
-yarn tauri:build
-```
-
-## Note:
-
-tested on:
-
-- windows 10
+- see package.json for build commands
