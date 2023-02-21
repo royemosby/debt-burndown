@@ -1,0 +1,13 @@
+.debtCard {
+  border: 1px solid black;
+  display: flex;
+}
+
+.icon {
+  height: 100px;
+  width: 100px;
+  padding: 1rem;
+  & img {
+    width: 100%;
+  }
+}
