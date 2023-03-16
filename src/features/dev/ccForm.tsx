@@ -3,25 +3,32 @@ import styles from './sandbox.module.scss';
 import * as fromFinance from '@/adapters/finance/calculations';
 
 export function CCForm() {
-  const [ccName, setCcName] = useState('');
-  const [apr, setApr] = useState('0');
-  const [principle, setPrinciple] = useState('0.0');
+  const [ccName, setCcName] = useState('preset');
+  const [apr, setApr] = useState(0.22);
+  const [principle, setPrinciple] = useState(3430.44);
   const [nextMonthPrinciple, setNextMonthPrinciple] = useState(0);
-  const [monthlyPayment, setMonthlyPayment] = useState('0');
-  const [paymentCount, setPaymentCount] = useState('1');
+  const [monthlyPayment, setMonthlyPayment] = useState(0);
+  const [paymentCount, setPaymentCount] = useState(12);
+  const [paymentCountDisplay, setPaymentCountDisplay] = useState(12);
+  const [paymentTarget, setPaymentTarget] = useState(0);
 
   function onSubmit(evt): void {
     evt.preventDefault();
+    setPaymentCountDisplay(paymentCount);
     setNextMonthPrinciple(
-      fromFinance.monthlyInterest({ principle: parseFloat(principle), apr: parseFloat(apr) })
+      fromFinance.monthlyPrinciple({
+        principle: principle,
+        apr: apr,
+        payment: monthlyPayment,
+      })
     );
-    const paymentTarget = fromFinance.amortization({
-      principle: parseFloat(principle),
-      rate: parseFloat(apr),
-      paymentCount: parseFloat(paymentCount),
-    });
-    console.log(paymentTarget);
-    setMonthlyPayment(paymentTarget.toString());
+    setPaymentTarget(
+      fromFinance.amortization({
+        principle: principle,
+        rate: apr,
+        paymentCount: paymentCount,
+      })
+    );
   }
   return (
     <>
@@ -44,7 +51,7 @@ export function CCForm() {
             type="number"
             name="apr"
             value={apr}
-            onChange={evt => setApr(evt.target.value)}
+            onChange={evt => setApr(parseFloat(evt.target.value))}
           />
         </div>
         <div>
@@ -55,7 +62,7 @@ export function CCForm() {
             type="number"
             name="currentDebt"
             value={principle}
-            onChange={evt => setPrinciple(evt.target.value)}
+            onChange={evt => setPrinciple(parseFloat(evt.target.value))}
           />
         </div>
         <div>
@@ -66,7 +73,7 @@ export function CCForm() {
             type="number"
             name="monthlyPayment"
             value={monthlyPayment}
-            onChange={evt => setMonthlyPayment(evt.target.value)}
+            onChange={evt => setMonthlyPayment(parseFloat(evt.target.value))}
           />
         </div>
         <div>
@@ -75,14 +82,17 @@ export function CCForm() {
             type="number"
             name="paymentCount"
             value={paymentCount}
-            onChange={evt => setPaymentCount(evt.target.value)}
+            onChange={evt => setPaymentCount(parseFloat(evt.target.value))}
           />
         </div>
         <div>
           <input type="submit" />
         </div>
       </form>
-      <p>Next month principle: {nextMonthPrinciple}</p>
+      <p>Next month's principle: ${nextMonthPrinciple}</p>
+      <p>
+        Payment target: ${paymentTarget} over {paymentCountDisplay} months
+      </p>
     </>
   );
 }
