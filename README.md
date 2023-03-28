@@ -1,4 +1,4 @@
-# Debt burndown calculator built in React inside Tauri
+# Debt Burndown Calculator Standalone App
 
 ## Tech used
 
