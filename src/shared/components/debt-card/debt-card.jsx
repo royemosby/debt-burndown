@@ -2,7 +2,7 @@ import { Debt } from '@/features/home/home';
 import styles from './debt-card.module.scss';
 import * as fromAssets from '@/shared/assets/assets';
 
-export function DebtCard({ debt }: { debt: Debt }) {
+export function DebtCard({ debt }) {
   return (
     <li className={styles.debtCard}>
       <div className={styles.icon}>

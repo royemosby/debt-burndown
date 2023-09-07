@@ -1,6 +1,6 @@
 import { Header } from '../../components/index';
 
-export function DefaultLayout({ children }: any) {
+export function DefaultLayout({ children }) {
   return (
     <>
       <Header />

@@ -4,7 +4,7 @@ import styles from './master-detail.module.scss';
 import { Details } from './details/details';
 import { MasterList } from './master-list/master-list';
 
-export function MasterDetailLayout({ debts, children }: { debts: Debt[]; children?: any }) {
+export function MasterDetailLayout({ debts, children }) {
   return (
     <>
       <Header />

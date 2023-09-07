@@ -1,1 +1,0 @@
-export type {GenericProps, OptionalGenericProps} from './component-types'

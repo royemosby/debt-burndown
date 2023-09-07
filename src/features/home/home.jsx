@@ -1,13 +1,7 @@
 import { MasterDetailLayout } from '@/shared/layouts';
-export interface Debt {
-  name: string;
-  startingPrinciple: number;
-  apr: number;
-  paydown?: number;
-  paymentCount?: number;
-}
+
 export function Home() {
-  const mockDebts: Debt[] = [
+  const mockDebts = [
     {
       name: 'Roy USAA CC',
       startingPrinciple: 5000,

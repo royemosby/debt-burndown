@@ -12,7 +12,7 @@ export function CCForm() {
   const [paymentCountDisplay, setPaymentCountDisplay] = useState(12);
   const [paymentTarget, setPaymentTarget] = useState(0);
 
-  function onSubmit(evt): void {
+  function onSubmit(evt) {
     evt.preventDefault();
     setPaymentCountDisplay(paymentCount);
     setNextMonthPrinciple(
