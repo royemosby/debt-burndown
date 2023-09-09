@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import * as FromFeatures from '@/features/index';
+import * as FromFeatures from '../../features';
 
 export const router = createBrowserRouter([
   {

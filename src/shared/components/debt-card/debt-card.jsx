@@ -1,6 +1,5 @@
-import { Debt } from '@/features/home/home';
 import styles from './debt-card.module.scss';
-import * as fromAssets from '@/shared/assets/assets';
+import * as fromAssets from './../../assets/assets';
 
 export function DebtCard({ debt }) {
   return (

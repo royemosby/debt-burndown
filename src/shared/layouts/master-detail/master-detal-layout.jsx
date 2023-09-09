@@ -1,5 +1,4 @@
-import { Header, DebtCard } from '@/shared/components';
-import { Debt } from '@/features/home/home';
+import { Header, DebtCard } from './../../../shared/components';
 import styles from './master-detail.module.scss';
 import { Details } from './details/details';
 import { MasterList } from './master-list/master-list';

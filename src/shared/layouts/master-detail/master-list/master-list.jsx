@@ -1,4 +1,4 @@
-import { DebtCard } from '@/shared/components';
+import { DebtCard } from '../../../../shared/components';
 import styles from './master-list.module.scss';
 
 export function MasterList({ debts }) {

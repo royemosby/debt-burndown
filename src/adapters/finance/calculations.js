@@ -6,8 +6,8 @@ export function monthlyInterest({ principle, apr = 0 }) {
   return principle * monthlyInterest;
 }
 
-export function monthlyPrinciple({ principle, apr = 0, payment = 0 }) {
-  return monthlyInterest({ principle, apr }) + principle - payment;
+export function monthlyPrinciple({principle, apr=0, payment=0}){
+  return monthlyInterest({principle, apr}) + principle - payment;
 }
 
 export const monthlyMaintenanceTarget = monthlyInterest;
@@ -16,8 +16,8 @@ export const monthlyMaintenanceTarget = monthlyInterest;
 
 const finance = new Finance();
 
-export function amortization({ principle, rate = 0, paymentCount = 1 }) {
-  return finance.AM(principle, rate, paymentCount, 1);
+export function amortization({principle, rate=0, paymentCount=1} ){
+  return finance.AM(principle, rate, paymentCount, 1)
 }
 
 //Individual card activites

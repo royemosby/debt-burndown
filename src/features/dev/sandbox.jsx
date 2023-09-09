@@ -1,4 +1,4 @@
-import { DefaultLayout } from '@/shared/layouts';
+import { DefaultLayout } from './../../shared/layouts';
 import { CCForm } from './ccForm';
 export function Sandbox() {
   return (

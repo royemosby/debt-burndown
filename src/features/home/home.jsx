@@ -1,4 +1,4 @@
-import { MasterDetailLayout } from '@/shared/layouts';
+import { MasterDetailLayout } from '../../shared/layouts/master-detail/master-detal-layout';
 
 export function Home() {
   const mockDebts = [

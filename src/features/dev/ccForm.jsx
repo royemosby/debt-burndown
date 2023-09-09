@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './sandbox.module.scss';
-import * as fromFinance from '@/adapters/finance/calculations';
+import * as fromFinance from './../../adapters/finance/calculations'
 
 export function CCForm() {
   const [ccName, setCcName] = useState('preset');
